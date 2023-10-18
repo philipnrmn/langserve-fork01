@@ -1,0 +1,12 @@
+apiVersion: server.smith.langchain.com/v1alpha1
+kind: Langserve
+metadata:
+  labels:
+    app.kubernetes.io/name: langserve
+    app.kubernetes.io/instance: langserve-sample
+    app.kubernetes.io/part-of: operator
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/created-by: operator
+  name: langserve-sample
+spec:
+  replicas: 1

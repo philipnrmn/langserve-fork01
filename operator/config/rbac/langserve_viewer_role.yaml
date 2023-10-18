@@ -1,0 +1,27 @@
+# permissions for end users to view langserves.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  labels:
+    app.kubernetes.io/name: clusterrole
+    app.kubernetes.io/instance: langserve-viewer-role
+    app.kubernetes.io/component: rbac
+    app.kubernetes.io/created-by: operator
+    app.kubernetes.io/part-of: operator
+    app.kubernetes.io/managed-by: kustomize
+  name: langserve-viewer-role
+rules:
+- apiGroups:
+  - server.smith.langchain.com
+  resources:
+  - langserves
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - server.smith.langchain.com
+  resources:
+  - langserves/status
+  verbs:
+  - get
